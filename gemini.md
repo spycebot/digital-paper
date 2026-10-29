@@ -1,6 +1,7 @@
 Prompt:
 I want to formalise my **digital-paper** design vocabulary. When writing up a design vocabulary (or whatever professional designers call it), what things should I be writing about? What are the required document headings, and suggested topics to address?
 
+
 Response:
 To formalize a **digital-paper design vocabulary**—bridging tactile, physical media (like aged paper, dot-matrix printouts, and notebooks) with digital or screen-based interfaces—designers typically create a **Design Language System (DLS)**, **Brand/Visual Guidelines**, or a **Design Token & Aesthetic Spec**.
 
@@ -69,6 +70,8 @@ When writing descriptions under these headings, make sure to capture the specifi
 
 Would you like to draft a specific section of this document—such as the **Color & Substrate Palette** or **Typography Rules**—tailored to your dot-matrix and paper aesthetic?
 
+-----
+
 Follow-up prompt:
 Yes, please show me what you would write for both of these sections.
 
@@ -113,6 +116,7 @@ Chosen Fonts
   --sw-font-quote:      var(--sw-font-display);
   --sw-font-accent:     var(--sw-font-heading);
   --sw-font-legal:      var(--sw-font-body);
+
 
 Follow-up response:
 ## 1. Introduction & Design Philosophy
@@ -173,3 +177,91 @@ To implement this vocabulary, our type stack balances editorial impact with tech
 ---
 
 Would you like to expand this vocabulary further by defining the **Substrate Color Palette & Ink Tokens** or setting up **Layout Grid Rules** for your document margins?
+
+-----
+
+Follow-up prompt:
+Please define the Substrate Color Palette & Ink Tokens. Please also scan "shannonware.jsx" for useful information.
+
+
+Follow-up response:
+## 4. Substrate Color Palette & Ink Tokens
+
+To achieve the tactile realism of aged paper without relying on heavy bitmap assets, our substrate styling combines directional base gradients, edge foxing (vignetting), and irregular age-spot patches. The typography and graphic lines are mapped to specialized ink and pigment tokens.
+
+### Substrate (Background) Specifications
+
+* **Base Tone (`#ede2bc`):** A warm, oxidized cream stock reminiscent of vintage technical manuals and archival printouts.
+
+
+* **Edge Vignette & Foxing:** Multi-layered radial gradients layered along the canvas edges to simulate natural oxidation and handling wear over decades:
+
+
+* *Top/Bottom Vignette:* Subtle light diffusion at the top edge (`rgba(248,235,198,0.45)`) deepening to a heavier shadow at the lower margin (`rgba(88,58,10,0.20)`).
+* *Side Margins:* Soft darkening along the lateral borders (`rgba(96,64,14,0.14)`).
+
+
+
+
+* **Age-Spot Patches:** Random, off-centre organic blemishes mapped via subtle radial ellipses (ranging from `rgba(126,88,26,0.17)` to `rgba(168,128,48,0.11)`) to recreate natural foxing spots on the paper stock.
+
+
+
+### Ink & Pigment Tokens
+
+Derived directly from the implementation tokens in `shannonware.jsx`, our color vocabulary enforces strict tonal hierarchy for text, diagrams, and UI highlights:
+
+| Token Name | Hex Code / Value | Functional Assignment |
+| --- | --- | --- |
+| **`ink`** | `#1a1208`
+
+ | Primary body text and deep typewriter ink impressions. |
+| **`ink2`** | `#3c2a10`
+
+ | Subheadings, rules, section dividers, and technical data headers. |
+| **`fade`** | `#6b5438`
+
+ | Captions, secondary metadata, and faded marginal notes. |
+| **`blue`** | `#18385a`
+
+ | Blueprint lines, circuit schematics, graph plots, and structural borders. |
+| **`amber`** | `#7a5c0a`
+
+ | Warning highlights, annotations, and diagnostic slide callouts. |
+
+---
+
+Would you like to proceed with defining the **Layout Grid & Page Boundary Rules** next?
+
+-----
+
+Follow-up prompt:
+Yes, please proceed with the Layout Grid & Page Boundary Rules.
+
+
+Follow-up response:
+## 5. Layout Grid & Page Boundary Rules
+
+The structural architecture of our digital-paper framework mimics physical print geometry, referencing vintage manuals, technical journalism columns, and tractor-fed computer paper.
+
+### Page Margins & Boundaries
+
+* **Centering & Max Width:** Content columns are strictly capped (e.g., `maxWidth: 660px` in core containers) and centered within the viewport to emulate standard archival paper widths.
+
+
+* **Document Padding:** Generous outer padding (`0 28px 52px`) ensures text blocks never crowd the physical "edge" of the browser window, simulating physical paper margins.
+
+
+* **Top Institutional Headers:** Documents open with centered metadata blocks enclosed by fine rules (`1px solid`), mimicking the institutional headers of mid-century technical and academic manuals.
+
+
+
+### Structural Dividers & Section Anatomy
+
+* **Section Headers (`§ N. Title`):** Prefixed with section symbols and paired with full-width monospaced underline strings (`"=".repeat(title.length + 6)`) to replicate mechanical typewriter formatting.
+
+
+* **Modular Block Separation:** Interface cards and text panels utilize crisp, low-weight borders (`1px solid`) matching the core ink or blueprint tokens (`blue`, `amber`) rather than modern drop shadows or rounded cards.
+
+
+* **Diagrammatic Framing:** Flowcharts and block schematics are bound inside technical boxes with explicit coordinate flows and arrow markers (`markerEnd="url(#darr)"`), treating layout blocks as functional circuit components.
