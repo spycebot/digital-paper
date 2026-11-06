@@ -21,7 +21,9 @@ And from fantasy, or science fiction, may arise a new technical reality. For dar
 
 ### Backgrounds
 
-As a rule, backgrounds resemble aged paper. Note the Claude 
+As a rule, backgrounds resemble aged paper. Note the Claude frequently used background colour `#faf9f5`.
+
+Projects such as [sng-safety-equipment-inspection](https://github.com/spycebot/sng-safety-equipment-inspection) have used an aged lined notebook JPEG from The Graphics Fairy [Vintage Notebook Paper](https://thegraphicsfairy.com/wp-content/uploads/2023/10/Notebook-Paper-Sm-2-GraphicsFairy.jpg) . More excellent choices on this page.
 
 
 ### Foregrounds
